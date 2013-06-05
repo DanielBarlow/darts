@@ -1,0 +1,94 @@
+<html><head>
+<title>DARTS - Daniel's Advanced Readiness Testing System</title>
+<style>
+#page
+{
+	background-color:#fff;
+	width:800px;
+    margin-left:auto;
+    margin-right:auto;
+	text-align:center;
+}
+body
+{
+	background-color:#eee;
+	color:#000;
+	padding:0px;
+	margin:0px;
+    margin-left:auto;
+    margin-right:auto;
+	text-align:center;
+}
+h1,h2,h3,h4
+{
+	color:#e22;
+}
+input
+{
+	font-color:#fff;
+}
+a
+{
+	color:#00d;
+}
+hr
+{
+	color:#555;
+	width:50%;
+}
+</style>
+<script>
+
+function testSelected(test){
+  var array=['701','701b','701c','702','702b','702c','net','server']; 
+  for (x in array)
+  {
+	if (array[x]!=test){
+	  document.getElementById('adv'+array[x]).innerHTML="";
+	}
+  }
+  if (document.getElementById('adv'+test).innerHTML==""){
+    document.getElementById('adv'+test).innerHTML="<br><a href=\"javascript:showAdv('"+test+"');\">Advanced Options</a>";
+  }
+}
+function showAdv(test){
+  document.getElementById('adv'+test).innerHTML="<br>How shall I generate questions?<br><input type=radio name=r value=1 checked>Random  <input type=radio name=r value=0>In order<br>Start at question <input type=text name=q size=2><br>Show questions containing:<br><input type=text name=w value=\"\" size=6>";
+}
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18664691-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<head><body>
+<div id=page>
+<center><img src="/darts.png"><br>
+<a href=/>Home</a>
+<h2>About DARTS</h2>
+Daniel's Advanced Readiness Testing System started when Daniel was preparing for his CompTIA A+ certification. He originally programmed it as a command-line Python script on an Ubuntu PC. When it was realized that others in the 
+Computer Systems Technology class could benefit from this practice testing software, he setup the script to be accessible over telnet. The program itself wasn't very user-friendly; you had to type the answer, or answers in the correct order, and backspace didn't work over telnet. Seeing that this was a frustration for most of the class, Daniel recoded the program into a Web application.
+<p>Today, two classes from the Chesapeake Center for Science and Technology use his system, which is located on the Internet, as well as the classroom intranet. DARTS currently contains four banks of each CompTIA A+ test, a 
+CompTIA Network+ test, and a CompTIA Server+ test. The questions come from ActualTests.com. 
+<p>Daniel Barlow has been CompTIA A+ and CompTIA Network+ certified with the help of DARTS. If you need help with IT work, or even want a Web-based application of your own, you can contact Daniel through his website: <a href="http://thedwebsite.net/">thedwebsite.net</a>
+</center>
+</div>
+<small>
+<br><center>
+The testing software was designed for the Computer Systems Technology class & <br>
+the Networking class at the Chesapeake Center for Science and Technology
+<p>Questions from ActualTests.com</small>
+</center>
+<p align=right>
+<br>&copy;2013 <a href="http://thedwebsite.net/">Daniel Barlow</a>
+</p>
+</body>
+</html>

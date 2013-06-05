@@ -1,0 +1,229 @@
+<html><head>
+<title>DARTS - Daniel's Advanced Readiness Testing System</title>
+<style>
+#page
+{
+	background-color:#fff;
+	width:800px;
+    margin-left:auto;
+    margin-right:auto;
+	text-align:center;
+}
+body
+{
+	background-color:#eee;
+	color:#000;
+	padding:0px;
+	margin:0px;
+    margin-left:auto;
+    margin-right:auto;
+	text-align:center;
+}
+h1,h2,h3,h4
+{
+	color:#e22;
+}
+input
+{
+	font-color:#fff;
+}
+a
+{
+	color:#00d;
+}
+hr
+{
+	color:#555;
+	width:50%;
+}
+</style>
+<script>
+
+function testSelected(test){
+  var array= ['801a','802a','701','701b','701c','701d','702','702b','702c','702d','net','server']; 
+  for (x in array)
+  {
+	if (array[x]!=test){
+	  document.getElementById('adv'+array[x]).innerHTML="";
+	}
+  }
+  if (document.getElementById('adv'+test).innerHTML==""){
+    document.getElementById('adv'+test).innerHTML="<br><a href=\"javascript:showAdv('"+test+"');\">Advanced Options</a>";
+  }
+}
+function showAdv(test){
+  document.getElementById('adv'+test).innerHTML="<br>How shall I generate questions?<br><input type=radio name=r value=1 checked>Random  <input type=radio name=r value=0>In order<br>Start at question <input type=text name=q size=2><br>Show questions containing:<br><input type=text name=w value=\"\" size=6>";
+}
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18664691-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<head><body>
+<div id=page>
+<center><img src=/darts.png><br>
+<table border=0 align=center>
+<a href="/#aplus">A+ Tests</a> | <a href="/#netplus">Net+ Test</a> | <a href="/#serverplus">Server+ Test</a>
+<tr><th colspan=2><h2><a name=aplus></a>A+ Certification</h2></th></tr>
+<th width=400><h3>801 Questions</h3></th>
+<th width=400><h3>802 Questions</h3></th>
+</tr><tr>
+<td height=180>
+<center>
+<b>Newest Questions</b><br>
+<form action=/cgi-bin/aplus/801a/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('801a');">
+<span id=adv801a></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+<td height=180>
+<center>
+<b>Newest Questions</b><br>
+<form style="display:hidden;" action=/cgi-bin/aplus/802a/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('802a');">
+<span id=adv802a></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+</tr><tr>
+<th width=400><h3>701 Questions</h3></th>
+<th width=400><h3>702 Questions</h3></th>
+</tr><tr>
+<td height=180>
+<center>
+<b>New Questions (Delta)</b><br>
+<form action=/cgi-bin/aplus/701d/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('701d');">
+<span id=adv701d></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+<td height=180>
+<center>
+<b>New Questions (Delta)</b><br>
+<form action=/cgi-bin/aplus/702d/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('702d');">
+<span id=adv702d></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+</tr><tr>
+<td height=180>
+<center>
+<b>Outdated Questions (Charlie)</b><br>
+<form action=/cgi-bin/aplus/701c/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('701c');">
+<span id=adv701c></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+<td height=180>
+<center>
+<b>Outdated Questions (Charlie)</b><br>
+<form action=/cgi-bin/aplus/702c/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('702c');">
+<span id=adv702c></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+</tr><tr>
+<td height=180>
+<center>
+<b>More Outdated Questions (Bravo)</b><br>
+<form action=/cgi-bin/aplus/701b/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('701b');">
+<span id=adv701b></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+<td height=180>
+<center>
+<b>More Outdated Questions (Bravo)</b><br>
+<form action=/cgi-bin/aplus/702b/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('702b');">
+<span id=adv702b></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+</tr><tr>
+<td height=180>
+<center>
+<b>Original Questions (Alpha)</b><br>
+<form action=/cgi-bin/aplus/701/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('701');">
+<span id=adv701></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+<td height=180>
+<center>
+<b>Original Questions (Alpha)</b><br>
+<form action=/cgi-bin/aplus/702/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('702');">
+<span id=adv702></span>
+<br><input type=submit value="Start Test">
+</form>
+</center>
+</td>
+</tr>
+</table>
+<hr>
+<h2><a name=netplus></a>Network+ Certification</h2>
+<p><h3>Net+ Questions</h3>
+<form action=/cgi-bin/netplus/005a/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('net');">
+<span id=advnet></span>
+<br><input type=submit value="Start Test">
+</form>
+<hr>
+<h2><a name=serverplus></a>Server+ Certification</h2>
+<p><h3>Server+ Questions</h3>
+<form action=/cgi-bin/serverplus/start.py>
+Name: <input name=name type=text value=Unknown onclick="testSelected('server');">
+<span id=advserver></span>
+<br><input type=submit value="Start Test">
+</form>
+<hr><!--
+<h2><a name=funstuff></a>Fun Stuff</h2>
+<p><h3>Web Chat</h3>
+<form action=/cgi-bin/chat.py>
+Name: <input name=n type=text>
+<br><input type=submit value="Enter">
+</form>
+<p><h2><a name=scores></a>Teacher Login</h2>
+<a href=login/miller.html>Ms. Miller</a> | 
+<a href=login/welty.html>Mr. Welty</a>-->
+</center>
+</div>
+<small>
+<br><center>
+The testing software was designed for Ms. Miller's Computer Systems Technology class & <br>
+Mr. Welty's Networking class at Chesapeake Center for Science and Technology
+<p><a href="/about/">About this website and testing application.</a>
+<p>Questions from ActualTests.com</small>
+</center>
+<p align=right>
+<br>&copy;2013 <a href="http://thedwebsite.net/">Daniel Barlow</a>
+</p>
+</body>
+</html>
